@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class AI : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     private Rigidbody2D enemyR;
     private SpriteRenderer enemySR;
