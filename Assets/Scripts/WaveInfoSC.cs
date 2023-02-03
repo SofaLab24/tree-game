@@ -6,5 +6,5 @@ using UnityEngine;
 public class WaveInfoSC : ScriptableObject
 {
     public List<GameObject> Enemies;
-    public float waveSpawnCooldown = 1f;
+    public float waveSpawnRate = 1f;
 }

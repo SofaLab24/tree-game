@@ -11,8 +11,6 @@ public class EnemySpawnerManager : MonoBehaviour
     public float mapRadius = 10f;
     public float radiusFromPlayer = 2f;
 
-    public bool spawnenemy = true;
-
     float countdown = 1f;
     int selectedWaveInfo = 0;
 
@@ -25,15 +23,11 @@ public class EnemySpawnerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!spawnenemy)
-        {
-            return;
-        }
         countdown -= Time.deltaTime;
         if (countdown <= 0f)
         {
             Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[0], PickPosition(), Quaternion.identity);
-            countdown = wavesPreset.waves[selectedWaveInfo].waveSpawnCooldown;
+            countdown = 1f/wavesPreset.waves[selectedWaveInfo].waveSpawnRate;
         }
     }
 
@@ -68,7 +62,6 @@ public class EnemySpawnerManager : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(Vector3.zero, Vector3.one * mapRadius * 2);
 
-        //Need to remake this so it shows from player position
         Gizmos.color = Color.blue;
         if (playerObject != null)
         {
