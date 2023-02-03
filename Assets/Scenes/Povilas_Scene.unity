@@ -262,6 +262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumberjack
       objectReference: {fileID: 0}
+    - target: {fileID: 5058464188402013159, guid: 82bd63472bfc34c5687096f59d7d6a98, type: 3}
+      propertyPath: enemySpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82bd63472bfc34c5687096f59d7d6a98, type: 3}
 --- !u!1001 &6269045012591420901

@@ -11,6 +11,9 @@ public class AI : MonoBehaviour
     private GameObject player;
     private Transform playerT;
 
+    [SerializeField]
+    float enemySpeed = 2f;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -19,23 +22,21 @@ public class AI : MonoBehaviour
         enemySR = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.x > playerT.position.x)
         {
             transform.localScale = new Vector2(-1, 1);           
-            enemyR.velocity = new Vector2(-2f, 0f); // -2f galima pakeisti "movement speed"
-            transform.position = Vector2.MoveTowards(transform.position, playerT.position, 2f * Time.deltaTime);
-            if(enemySR.flipX != true)
-            {
-                enemySR.flipX = true;
-            }
+            //enemyR.velocity = new Vector2(-2f, 0f); // -2f galima pakeisti "movement speed"
+            transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
+            enemySR.flipX = false;
         }
         else if (transform.position.x < playerT.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
-            enemyR.velocity = new Vector2(2f, 0f);
-            transform.position = Vector2.MoveTowards(transform.position, playerT.position, 2f * Time.deltaTime);
+            //enemyR.velocity = new Vector2(2f, 0f);
+            transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
+            enemySR.flipX = true;
         }
     }
 }
