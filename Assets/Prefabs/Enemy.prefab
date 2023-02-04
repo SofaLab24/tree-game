@@ -129,7 +129,7 @@ MonoBehaviour:
   damage: 1
   dropChance: 0.125
   lootDrop: {fileID: 11400000, guid: 43e953963fe7bb64c9972895068ba0e8, type: 2}
-  enemySpeed: 5
+  enemySpeed: 2
 --- !u!50 &5602018320546986817
 Rigidbody2D:
   serializedVersion: 4
