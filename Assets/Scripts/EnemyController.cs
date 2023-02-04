@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     private Transform playerT;
 
     public float health = 3f;
+    public float damage = 1f;
 
     [SerializeField]
     float enemySpeed = 2f;

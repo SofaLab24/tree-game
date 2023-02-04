@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 966064152}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5236,17 +5236,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8566304453068902432, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 8566304453068902428, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
+      propertyPath: health
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8566304453164205310, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8566304453164205310, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8566304453164205311, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
       propertyPath: m_RootOrder
