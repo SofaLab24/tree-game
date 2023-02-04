@@ -47,4 +47,4 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   wavesPreset: {fileID: 11400000, guid: 3fad449385aacc44aac1e9ebab9f7d22, type: 2}
   mapRadius: 60
-  radiusFromPlayer: 16.9
+  radiusFromPlayer: 57.5
