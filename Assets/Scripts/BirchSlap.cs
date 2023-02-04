@@ -65,14 +65,12 @@ public class BirchSlap : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 305f);
             }
-            Debug.Log(playerRb.velocity.normalized.x);
         }
         
     }
 
     private void Attack()
     {
-        Debug.Log("Attack");
         timer = timeToAttack;
 
         GameObject attack = Instantiate(attack = slash, transform);

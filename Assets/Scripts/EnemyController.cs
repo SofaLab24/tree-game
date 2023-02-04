@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class EnemyController : MonoBehaviour
 
     private GameObject player;
     private Transform playerT;
+
+    public float health = 3f;
 
     [SerializeField]
     float enemySpeed = 2f;
@@ -37,6 +40,16 @@ public class EnemyController : MonoBehaviour
             //enemyR.velocity = new Vector2(2f, 0f);
             transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
             enemySR.flipX = true;
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("PlayerProjectile"))
+        {
+            Projectile proj = other.GetComponent<Projectile>();
+            this.health -= proj.damageAmount;
+            if (this.health <= 0) Destroy(this);
         }
     }
 }
