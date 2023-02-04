@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 5611bb79a20c3487f9180a980df5c47c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbdc546490d6546dc8a090fd433fa098, type: 3}
   m_Color: {r: 0, g: 0.6301079, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f341f51008a0e41cb8e0b2f342292a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemUnlock: Sapling
+  itemUnlock: 0
   pickupSound: {fileID: 8300000, guid: 202ed913d7c05469bbd5362ee4707614, type: 3}
 --- !u!60 &4718980006362067128
 PolygonCollider2D:
@@ -117,7 +117,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

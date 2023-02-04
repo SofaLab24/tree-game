@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class DropController : MonoBehaviour
 {
-    public string itemUnlock;
+    public WeaponTypeEnum itemUnlock;
     public AudioClip pickupSound;
 
-    public void PickupSelect()
+    public WeaponTypeEnum PickupSelect()
     {
         SoundManager.Instance.Play(pickupSound);
-        switch (itemUnlock)
-        {
-            case "Sapling":
-                GameObject.FindGameObjectWithTag("SeedWeapon").GetComponent<SowTheSeeds>().enabled = true;
-                break; 
-            default:
-                break;
-            
-        }
-        Destroy(gameObject);
+        Destroy(gameObject, .5f);
+        return itemUnlock;
     }
 }
