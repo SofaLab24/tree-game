@@ -43,13 +43,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Don't worry");
         if (other.tag.Equals("PlayerProjectile"))
         {
+            Debug.Log("Be happy");
             Projectile proj = other.GetComponent<Projectile>();
             this.health -= proj.damageAmount;
-            if (this.health <= 0) Destroy(this);
+            if (this.health <= 0) Destroy(this.gameObject);
         }
     }
 }
