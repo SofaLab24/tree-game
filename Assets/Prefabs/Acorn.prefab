@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4a1eac057e2b5448969deaa543e1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 90
-  effectRange: 90
+  damage: 5
+  effectRange: 1.5
   speed: 5
   enemyMask:
     serializedVersion: 2
