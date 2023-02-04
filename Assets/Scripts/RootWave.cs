@@ -22,7 +22,12 @@ public class RootWave : MonoBehaviour
 
         if(timer <= 0f)
         {
-            Instantiate
+            Vector3 target = ClosestEnemy();
+            if(target == Vector3.forward)
+            {
+                return;
+            }
+            Instantiate(rootWavePrefab, target, Quaternion.identity);
             timer = 1f / attackRate;
         }
     }
@@ -32,12 +37,17 @@ public class RootWave : MonoBehaviour
 
         RaycastHit2D[] enemiesInRange = Physics2D.CircleCastAll(transform.position, 100f, Vector3.forward);
 
-        float dis = 999f;
+        if(enemiesInRange.Length == 0)
+        {
+            return Vector3.forward;
+        }
+
+        //float dis = Vector3.Distance;
         int id;
 
-        for (int i = 0; i < enemiesInRange.Length; i++)
+        for (int i = 1; i < enemiesInRange.Length; i++)
         {
-            enemiesInRange[i].collider.gameObject.GetComponent<EnemyController>()?.takeDamage(damage);
+            
         }
 
         return pos;
