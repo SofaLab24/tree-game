@@ -97,10 +97,10 @@ public class CharacterController : MonoBehaviour
             SoundManager.Instance.Play(hitSound);
             if (this.health <= 0)
             {
-                dead = true;
                 SoundManager.Instance.Play(deathSound);
+                dead = true;
+                GameManager.instance.NextScene();
                 Destroy(character);
-
             }
         }
     }
@@ -111,8 +111,8 @@ public class CharacterController : MonoBehaviour
         SoundManager.Instance.Play(hitSound);
         if (this.health <= 0)
         {
-            dead = true;
             SoundManager.Instance.Play(deathSound);
+            dead = true;
             Destroy(character);
         }
     }
