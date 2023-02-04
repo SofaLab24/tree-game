@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
 
     public float health = 3f;
     public float damage = 1f;
+    public float dropChance = 0.5f;
+    public Sprite drop;
 
     [SerializeField]
     float enemySpeed = 2f;
@@ -31,14 +33,12 @@ public class EnemyController : MonoBehaviour
         if (transform.position.x > playerT.position.x)
         {
             transform.localScale = new Vector2(-1, 1);           
-            //enemyR.velocity = new Vector2(-2f, 0f); // -2f galima pakeisti "movement speed"
             transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
             enemySR.flipX = false;
         }
         else if (transform.position.x < playerT.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
-            //enemyR.velocity = new Vector2(2f, 0f);
             transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
             enemySR.flipX = true;
         }
@@ -48,6 +48,15 @@ public class EnemyController : MonoBehaviour
     {
         this.health -= damage;
         if (this.health <= 0) Destroy(this.gameObject);
+    }
+
+    private void dropItem()
+    {
+        System.Random rnd = new System.Random();
+        if (rnd.Next(0, 1) < dropChance)
+        {
+            Instantiate<Sprite>(drop, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+        }
     }
 
     public void sapped(float duration)
