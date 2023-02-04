@@ -1028,6 +1028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736355843, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1282816341, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
       propertyPath: slider
       value: 
@@ -1080,6 +1084,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8566304453298103941, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
 --- !u!1 &1886982477 stripped
@@ -1104,6 +1112,8 @@ MonoBehaviour:
   dropChance: 0.3
   lootDrop: {fileID: 11400000, guid: 43e953963fe7bb64c9972895068ba0e8, type: 2}
   enemySpeed: 2
+  bullet: {fileID: 7541925065349279570, guid: 5e7e908ee20536f4ba9ee41097e7f9ef, type: 3}
+  timeToShoot: 5
 --- !u!1 &2026123512
 GameObject:
   m_ObjectHideFlags: 0
