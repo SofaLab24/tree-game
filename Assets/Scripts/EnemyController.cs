@@ -74,6 +74,16 @@ public class EnemyController : MonoBehaviour
         // TODO: This
     }
 
+    public void Root(float duration)
+    {
+        StartCoroutine(RootTime(duration));
+    }
+
+    IEnumerator RootTime(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+    }
+
     //public void OnTriggerEnter2D(Collider2D other)
     //{
     //    Debug.Log("Don't worry");
