@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5058464188402013157}
   - component: {fileID: 5058464188402013156}
   - component: {fileID: 5058464188402013159}
+  - component: {fileID: 93880182625929639}
   m_Layer: 0
   m_Name: lumberjack
   m_TagString: Untagged
@@ -97,3 +98,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef841cbb21c04e1b8a68c2110ccbb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  damage: 1
+  enemySpeed: 2
+--- !u!61 &93880182625929639
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058464188402013158}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08775735, y: 0.052654564}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.557489, y: 3.1191344}
+  m_EdgeRadius: 0
