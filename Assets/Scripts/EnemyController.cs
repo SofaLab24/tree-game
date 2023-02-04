@@ -1,4 +1,3 @@
-//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +5,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyController : MonoBehaviour
 {
-    private Rigidbody2D enemyR;
-    private SpriteRenderer enemySR;
+    protected Rigidbody2D enemyR;
+    protected SpriteRenderer enemySR;
 
-    private GameObject player;
-    private Transform playerT;
+    protected GameObject player;
+    protected Transform playerT;
 
     public float health = 3f;
     public float damage = 1f;
@@ -20,7 +19,7 @@ public class EnemyController : MonoBehaviour
     public LootDropTable lootDrop;
 
     [SerializeField]
-    float enemySpeed = 2f;
+    protected float enemySpeed = 2f;
 
     void Start()
     {
@@ -31,6 +30,11 @@ public class EnemyController : MonoBehaviour
     }
 
     void FixedUpdate()
+    {
+        Movement();
+    }
+
+    public virtual void Movement()
     {
         if (transform.position.x > playerT.position.x)
         {
