@@ -12,9 +12,10 @@ public class CharacterController : MonoBehaviour
     float vertical;
 
     public float runSpeed = 20.0f;
-
     public float health = 5;
     public float maxHealth = 5;
+
+    public ParticleSystem runParticles;
 
     public Slider slider;
 
@@ -38,7 +39,20 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal, vertical).normalized * runSpeed;
+        if (horizontal < 0)
+        {
+            var forceVector = runParticles.forceOverLifetime;
+            forceVector.enabled = true;
+            forceVector.xMultiplier = 1.7f;
+        }
+        else
+        {
+            var forceVector = runParticles.forceOverLifetime;
+            forceVector.enabled = true;
+            forceVector.xMultiplier = -1.7f;
+        }
+        
+        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
     public void OnCollisionEnter2D(Collision2D col)
