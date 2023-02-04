@@ -60,8 +60,7 @@ public class EnemyController : MonoBehaviour
     {
         float chance = Random.Range(0, 100);
         if (chance / 100 < dropChance)
-        {
-            Debug.Log(chance / 100);
+        {            
             Instantiate(lootDrop.PickItem(), transform.position, transform.rotation);
         }
     }
