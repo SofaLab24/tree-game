@@ -5,14 +5,13 @@ using UnityEngine;
 public class DropController : MonoBehaviour
 {
     public string itemUnlock;
-    public SowTheSeeds seedsWeapon;
 
     public void PickupSelect()
     {
         switch (itemUnlock)
         {
             case "Sapling":
-                seedsWeapon.gameObject.SetActive(true);
+                GameObject.FindGameObjectWithTag("SeedWeapon").GetComponent<SowTheSeeds>().enabled = true;
                 break; 
             default:
                 break;
