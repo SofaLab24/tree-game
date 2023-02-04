@@ -123,14 +123,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   redOutRedIn:
-    m_OverrideState: 0
-    m_Value: 100
+    m_OverrideState: 1
+    m_Value: 69
   redOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 42
   redOutBlueIn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -21
   greenOutRedIn:
     m_OverrideState: 0
     m_Value: 0

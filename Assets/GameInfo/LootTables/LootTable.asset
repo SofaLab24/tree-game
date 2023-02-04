@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LootTable
   m_EditorClassIdentifier: 
   itemDrops:
-  - {fileID: 7708141006423029845, guid: 5a9785c75c89b4a61ba5c48755c757b4, type: 3}
+  - {fileID: 6829220960665657202, guid: b778bab402fa24af387997fd7eb63789, type: 3}

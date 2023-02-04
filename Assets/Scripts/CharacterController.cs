@@ -75,4 +75,11 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("Pickup"))
+        {
+            col.GetComponent<DropController>().PickupSelect();
+        }
+    }
 }
