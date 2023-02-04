@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 990654666}
   m_Layer: 0
   m_Name: Seedling
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  lifetime: 3
 --- !u!58 &990654666
 CircleCollider2D:
   m_ObjectHideFlags: 0
