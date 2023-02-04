@@ -5,9 +5,11 @@ using UnityEngine;
 public class DropController : MonoBehaviour
 {
     public string itemUnlock;
+    public AudioClip pickupSound;
 
     public void PickupSelect()
     {
+        SoundManager.Instance.Play(pickupSound);
         switch (itemUnlock)
         {
             case "Sapling":

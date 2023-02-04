@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject pauseScreen;
+    public AudioClip mainMusic;
 
     private void Awake()
     {
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager.Instance.PlayMusic(mainMusic);
     }
 
     // Update is called once per frame

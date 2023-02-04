@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemUnlock: Sapling
-  seedsWeapon: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: 202ed913d7c05469bbd5362ee4707614, type: 3}
 --- !u!60 &4718980006362067128
 PolygonCollider2D:
   m_ObjectHideFlags: 0
