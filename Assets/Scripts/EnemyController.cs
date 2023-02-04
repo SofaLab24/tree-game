@@ -1,4 +1,4 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +14,10 @@ public class EnemyController : MonoBehaviour
 
     public float health = 3f;
     public float damage = 1f;
-    public float dropChance = 0.5f;
-    public Sprite drop;
+    [Range(0, 1)]
+    public float dropChance = .3f;
+
+    public LootDropTable lootDrop;
 
     [SerializeField]
     float enemySpeed = 2f;
@@ -32,7 +34,7 @@ public class EnemyController : MonoBehaviour
     {
         if (transform.position.x > playerT.position.x)
         {
-            transform.localScale = new Vector2(-1, 1);           
+            transform.localScale = new Vector2(-1, 1);
             transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
             enemySR.flipX = false;
         }
@@ -47,15 +49,20 @@ public class EnemyController : MonoBehaviour
     public void takeDamage(float damage)
     {
         this.health -= damage;
-        if (this.health <= 0) Destroy(this.gameObject);
+        if (this.health <= 0)
+        {
+            dropItem();
+            Destroy(this.gameObject);
+        }
     }
 
     private void dropItem()
     {
-        System.Random rnd = new System.Random();
-        if (rnd.Next(0, 1) < dropChance)
+        float chance = Random.Range(0, 100);
+        if (chance / 100 < dropChance)
         {
-            Instantiate<Sprite>(drop, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            Debug.Log(chance / 100);
+            Instantiate(lootDrop.PickItem(), transform.position, transform.rotation);
         }
     }
 

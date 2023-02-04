@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   damage: 1
-  dropChance: 0.5
-  drop: {fileID: 0}
+  dropChance: 0.125
+  lootDrop: {fileID: 11400000, guid: 43e953963fe7bb64c9972895068ba0e8, type: 2}
   enemySpeed: 5
 --- !u!50 &5602018320546986817
 Rigidbody2D:
@@ -138,7 +138,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5602018320546986826}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
