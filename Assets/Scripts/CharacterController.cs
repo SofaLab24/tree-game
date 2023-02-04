@@ -21,6 +21,8 @@ public class CharacterController : MonoBehaviour
     public float xBounds = 75f;
     public float yBounds = 85f;
 
+    public AudioClip hitSound;
+    public AudioClip deathSound;
     public ParticleSystem runParticles;
 
     public Slider slider;
@@ -92,9 +94,11 @@ public class CharacterController : MonoBehaviour
         if (col.gameObject.tag.Equals("Enemy"))
         {
             this.health -= col.gameObject.GetComponent<EnemyController>().damage;
+            SoundManager.Instance.Play(hitSound);
             if (this.health <= 0)
             {
                 dead = true;
+                SoundManager.Instance.Play(deathSound);
                 Destroy(character);
 
             }
@@ -104,11 +108,12 @@ public class CharacterController : MonoBehaviour
     public void takeDamage(float damage)
     {
         this.health -= damage;
+        SoundManager.Instance.Play(hitSound);
         if (this.health <= 0)
         {
             dead = true;
+            SoundManager.Instance.Play(deathSound);
             Destroy(character);
-
         }
     }
 
