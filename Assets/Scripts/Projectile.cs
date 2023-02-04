@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,12 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damageAmount = 1;
+    public AudioClip slapSound;
+
+    public void Start()
+    {
+        SoundManager.Instance.Play(slapSound);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

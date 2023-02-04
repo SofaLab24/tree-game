@@ -144354,7 +144354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 0}
-  mainMusic: {fileID: 8300000, guid: 1a96687e95fe14de28fd7326047f100a, type: 3}
+  mainMusic: {fileID: 8300000, guid: c68755d20191a4ef79ae0cf91d9d45dd, type: 3}
 --- !u!4 &1178196759
 Transform:
   m_ObjectHideFlags: 0

@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 3
+  slapSound: {fileID: 8300000, guid: 145d7621dd9c44fc98b3a80e50a855b7, type: 3}
 --- !u!212 &-5588828052565349547
 SpriteRenderer:
   m_ObjectHideFlags: 0
