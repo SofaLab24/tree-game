@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawnerManager : MonoBehaviour
 {
+    public static EnemySpawnerManager instance;
+
     public GameObject playerObject;
 
     public WavePresetSC wavesPreset;
@@ -14,6 +16,15 @@ public class EnemySpawnerManager : MonoBehaviour
     float countdown = 1f;
     int selectedWaveInfo = 0;
 
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +38,7 @@ public class EnemySpawnerManager : MonoBehaviour
         if (countdown <= 0f)
         {
             Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[0], PickPosition(), Quaternion.identity);
-            countdown = 1f/wavesPreset.waves[selectedWaveInfo].waveSpawnRate;
+            countdown = 1f / wavesPreset.waves[selectedWaveInfo].waveSpawnRate;
         }
     }
 
@@ -40,7 +51,7 @@ public class EnemySpawnerManager : MonoBehaviour
         if (x < xPlPos && x > xPlPos - radiusFromPlayer)
         {
             if (y < yPlPos && y > yPlPos - radiusFromPlayer)
-            {                
+            {
                 if (xPlPos > mapRadius / 2)
                 {
                     x -= radiusFromPlayer;
