@@ -6,10 +6,13 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] GameObject character;
     Rigidbody2D body;
 
     float horizontal;
     float vertical;
+
+    bool dead = false;
 
     public float runSpeed = 20.0f;
     public float health = 5;
@@ -39,20 +42,23 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (horizontal < 0)
+        if (!dead)
         {
-            var forceVector = runParticles.forceOverLifetime;
-            forceVector.enabled = true;
-            forceVector.xMultiplier = 1.7f;
+            if (horizontal < 0)
+            {
+                var forceVector = runParticles.forceOverLifetime;
+                forceVector.enabled = true;
+                forceVector.xMultiplier = 1.7f;
+            }
+            else
+            {
+                var forceVector = runParticles.forceOverLifetime;
+                forceVector.enabled = true;
+                forceVector.xMultiplier = -1.7f;
+            }
+
+            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         }
-        else
-        {
-            var forceVector = runParticles.forceOverLifetime;
-            forceVector.enabled = true;
-            forceVector.xMultiplier = -1.7f;
-        }
-        
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
     public void OnCollisionEnter2D(Collision2D col)
@@ -62,7 +68,9 @@ public class CharacterController : MonoBehaviour
             this.health -= col.gameObject.GetComponent<EnemyController>().damage;
             if (this.health <= 0)
             {
-                Destroy(this.gameObject);
+                dead = true;
+                Destroy(character);
+
             }
         }
     }
