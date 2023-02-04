@@ -144288,6 +144288,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1282816341, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
+      propertyPath: runSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282816341, guid: 6f89302a5c20a414eaa0aee5a8f06dc5, type: 3}
       propertyPath: runParticles
       value: 
       objectReference: {fileID: 1028265800}

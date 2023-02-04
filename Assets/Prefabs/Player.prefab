@@ -5063,10 +5063,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68eae8eeefe964af08f85b9959d52476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 30
+  runSpeed: 2
   health: 5
   maxHealth: 5
-  runParticles: {fileID: 0}
+  runParticles: {fileID: 1028265800}
   slider: {fileID: 0}
 --- !u!1 &8566304453298103943
 GameObject:
