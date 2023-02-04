@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: New Wave info
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 791884194307863000, guid: c0583b4e855c74b8c82e7b9b5efb5ce9, type: 3}
+  - {fileID: 5602018320546986826, guid: d2063b52adf5e40e198290204ced5234, type: 3}
   waveSpawnRate: 1
