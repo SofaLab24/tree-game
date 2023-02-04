@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
 
     public LootDropTable lootDrop;
 
+    public AudioClip deathSound;
+    
     [SerializeField]
     protected float enemySpeed = 2f;
 
@@ -56,6 +58,7 @@ public class EnemyController : MonoBehaviour
         if (this.health <= 0)
         {
             dropItem();
+            SoundManager.Instance.Play(deathSound);
             Destroy(this.gameObject);
         }
     }
