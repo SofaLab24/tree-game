@@ -18,6 +18,9 @@ public class CharacterController : MonoBehaviour
     public float health = 5;
     public float maxHealth = 5;
 
+    public float xBounds = 75f;
+    public float yBounds = 85f;
+
     public ParticleSystem runParticles;
 
     public Slider slider;
@@ -57,7 +60,30 @@ public class CharacterController : MonoBehaviour
                 forceVector.xMultiplier = -1.7f;
             }
 
-            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+            if (transform.position.x >= xBounds)
+            {
+                transform.position = new Vector3(transform.position.x - Time.deltaTime, transform.position.y, 0);
+                body.velocity = new Vector2(-horizontal * runSpeed, vertical * runSpeed);
+            }
+            else if (transform.position.x <= -xBounds)
+            {
+                transform.position = new Vector3(transform.position.x + Time.deltaTime, transform.position.y, 0);
+                body.velocity = new Vector2(-horizontal * runSpeed, vertical * runSpeed);
+            }
+            else if (transform.position.y >= yBounds)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - Time.deltaTime, 0);
+                body.velocity = new Vector2(horizontal * runSpeed, -vertical * runSpeed);
+            }
+            else if (transform.position.y <= -yBounds)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + Time.deltaTime, 0);
+                body.velocity = new Vector2(horizontal * runSpeed, -vertical * runSpeed);
+            }
+            else
+            {
+                body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+            }
         }
     }
 
