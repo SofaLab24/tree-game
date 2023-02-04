@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Seedling : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float damage = 2f;
+    public float lifetime = 3f;
+
+    float remTime;
+
+    private void Start()
     {
-        
+        remTime = lifetime;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        remTime -= Time.deltaTime;
+        if(remTime <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {        
+        if(collision.tag.Equals("Enemy"))
+        {     
+            collision.GetComponent<EnemyController>().takeDamage(damage);
+        }
     }
 }
