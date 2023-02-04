@@ -6,6 +6,7 @@ public class RootWaveLauncher : MonoBehaviour
 {
     public GameObject rootWavePrefab;
     public float attackRate = .5f;
+    public LayerMask enemyMask;
 
     float timer;
 
@@ -25,15 +26,17 @@ public class RootWaveLauncher : MonoBehaviour
             Vector3 target = ClosestEnemy();
             if(target == Vector3.forward)
             {
+                Debug.Log("no enemies");
                 return;
             }
-            Instantiate(rootWavePrefab, target, Quaternion.identity);
+            GameObject gm = Instantiate(rootWavePrefab, transform.position, Quaternion.identity);
+            gm.GetComponent<RootWave>().SetTarget(target);
             timer = 1f / attackRate;
         }
     }
     Vector3 ClosestEnemy()
     {
-        RaycastHit2D[] enemiesInRange = Physics2D.CircleCastAll(transform.position, 100f, Vector3.forward);
+        RaycastHit2D[] enemiesInRange = Physics2D.CircleCastAll(transform.position, 100f, Vector3.forward, 100f, enemyMask);
 
         if(enemiesInRange.Length == 0)
         {
@@ -46,7 +49,7 @@ public class RootWaveLauncher : MonoBehaviour
         for (int i = 1; i < enemiesInRange.Length; i++)
         {
             float temp = Vector3.Distance(transform.position, enemiesInRange[i].transform.position);
-            if(temp > dis)
+            if(temp < dis)
             {
                 dis = temp;
                 id = i;
@@ -55,4 +58,12 @@ public class RootWaveLauncher : MonoBehaviour
 
         return enemiesInRange[id].transform.position;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 pos = ClosestEnemy();
+        Gizmos.DrawLine(transform.position, pos);
+        Gizmos.color = Color.yellow;
+    }
+
 }

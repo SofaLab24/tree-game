@@ -4915,8 +4915,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456287503956698256}
+  - component: {fileID: 1435488462348958329}
   m_Layer: 0
-  m_Name: RootWave
+  m_Name: RootWaveLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4937,6 +4938,23 @@ Transform:
   m_Father: {fileID: 8566304453164205311}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1435488462348958329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292071537916192034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cc40a2d89658e44b8d778b9b115945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootWavePrefab: {fileID: 5873546758990820891, guid: 09c4364fd3b1cf64db3f2e0d0fee6899, type: 3}
+  attackRate: 0.5
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &8566304453068902432
 GameObject:
   m_ObjectHideFlags: 0

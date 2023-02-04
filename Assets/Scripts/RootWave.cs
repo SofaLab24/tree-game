@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class RootWave : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float rootTime = 1.5f;
+    public float lifetime = 2f;
+    public float damage = 1f;
+    public float moveSpeed = 2f;
+
+    Vector3 dir = Vector3.zero;
+
+    private void Update()
     {
-        
+        transform.position = Vector2.MoveTowards(transform.position, transform.position + dir * moveSpeed, moveSpeed * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetTarget(Vector3 target)
     {
-        
+        dir = (target - transform.position).normalized;
+        float angle = Vector2.SignedAngle(Vector2.right, dir);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 }

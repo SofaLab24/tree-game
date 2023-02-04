@@ -31,9 +31,9 @@ public class Acorn : MonoBehaviour
         if (Vector3.Distance(target, transform.position) < .5f)
         {
 
-            RaycastHit2D[] enemiesInRange = Physics2D.CircleCastAll(transform.position, effectRange, Vector3.forward, enemyMask);
+            RaycastHit2D[] enemiesInRange = Physics2D.CircleCastAll(transform.position, effectRange, Vector3.forward, effectRange, enemyMask);
 
-            for (int i = enemiesInRange.Length-1; i >= 0; i--)
+            for (int i = enemiesInRange.Length - 1; i >= 0; i--)
             {
                 enemiesInRange[i].collider.gameObject.GetComponent<EnemyController>()?.takeDamage(damage);
             }
