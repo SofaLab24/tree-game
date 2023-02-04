@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c69757b72404f91d15da1e17a9ea, type: 3}
   m_Name: LootTable
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - {fileID: 7708141006423029845, guid: 5a9785c75c89b4a61ba5c48755c757b4, type: 3}
