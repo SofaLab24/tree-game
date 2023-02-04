@@ -75,6 +75,17 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    public void takeDamage(float damage)
+    {
+        this.health -= damage;
+        if (this.health <= 0)
+        {
+            dead = true;
+            Destroy(character);
+
+        }
+    }
+
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag.Equals("Pickup"))

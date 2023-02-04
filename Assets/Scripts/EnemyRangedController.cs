@@ -8,6 +8,11 @@ public class EnemyRangedController : EnemyController
 {
     protected float distanceMax = 10f;
 
+    [SerializeField] GameObject bullet;
+    [SerializeField] float timeToShoot = 5f;
+    [SerializeField] float bulletSpeed = 10f;
+    float timer;
+
     void FixedUpdate()
     {
         Movement();
@@ -30,8 +35,20 @@ public class EnemyRangedController : EnemyController
         var mustMove = Mathf.Abs(distance - distanceMax) > 0.1f;
         var flip = transform.position.x > playerT.position.x ^ runAway;
 
-        if(mustMove)
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
+            
+            GameObject projectile = Instantiate(bullet, transform.position + direction, Quaternion.Euler(0f, 0f, 0f));
+            projectile.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed * -1;
+            timer = timeToShoot;
+        }
+
+        if (mustMove)
+        {
+
+
+
             if (runAway)
             {
                 transform.position -= direction * Time.smoothDeltaTime;
@@ -39,6 +56,10 @@ public class EnemyRangedController : EnemyController
             else
             {
                 transform.position += direction * Time.smoothDeltaTime;
+                if (timer <= 0)
+                {
+
+                }
             }
         }
 
@@ -72,4 +93,5 @@ public class EnemyRangedController : EnemyController
             enemySR.flipX = true;
         }*/
     }
+
 }
