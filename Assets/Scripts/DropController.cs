@@ -10,7 +10,7 @@ public class DropController : MonoBehaviour
     public WeaponTypeEnum PickupSelect()
     {
         SoundManager.Instance.Play(pickupSound);
-        Destroy(gameObject, .5f);
+        Destroy(gameObject);
         return itemUnlock;
     }
 }
