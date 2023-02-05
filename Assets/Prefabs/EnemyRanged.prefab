@@ -152,7 +152,7 @@ MonoBehaviour:
   lootDrop: {fileID: 11400000, guid: 43e953963fe7bb64c9972895068ba0e8, type: 2}
   damaged: {r: 1, g: 0, b: 0, a: 1}
   colorDelay: 0.2
-  deathSound: {fileID: 8300000, guid: 7d0e457a3ea0e4f59a66b4377723994a, type: 3}
+  deathSound: {fileID: 8300000, guid: cf08bbbc99ca24ee3b27eed7bcd4ffce, type: 3}
   enemySpeed: 2
   bullet: {fileID: 8354473045893587776, guid: e946b203631614548b57a99552b49a64, type: 3}
   timeToShoot: 5
