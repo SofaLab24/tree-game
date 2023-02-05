@@ -38,12 +38,13 @@ public class EnemySpawnerManager : MonoBehaviour
         countdown -= Time.deltaTime;
         if (countdown <= 0f)
         {
-            GameObject gm = Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[enemyToPick], PickPosition(), Quaternion.identity);
-            enemyToPick++;
             if (enemyToPick >= wavesPreset.waves[selectedWaveInfo].Enemies.Count)
             {
                 enemyToPick = 0;
             }
+            GameObject gm = Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[enemyToPick], PickPosition(), Quaternion.identity);
+            enemyToPick++;
+            
             gm.GetComponent<EnemyController>().health *= wavesPreset.waves[selectedWaveInfo].enemyHealthMulplier;
             countdown = 1f / wavesPreset.waves[selectedWaveInfo].waveSpawnRate;
         }

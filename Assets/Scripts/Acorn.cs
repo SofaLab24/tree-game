@@ -11,9 +11,11 @@ public class Acorn : MonoBehaviour
 
     Vector3 target;
     bool targetSet = false;
+    float zRot;
 
     public void SetTarget(Vector3 _target, float dMod)
     {
+        zRot = transform.rotation.z;
         damage = dMod;
         target = _target;
         targetSet = true;
@@ -41,6 +43,13 @@ public class Acorn : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        zRot += 95f * Time.deltaTime;
+        if (zRot >= 360)
+        {
+            zRot = 0f;
+        }
+        transform.rotation = Quaternion.AngleAxis(zRot, Vector3.forward);
     }
     private void OnDrawGizmosSelected()
     {
