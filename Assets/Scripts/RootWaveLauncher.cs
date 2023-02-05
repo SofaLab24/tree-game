@@ -6,9 +6,12 @@ public class RootWaveLauncher : MonoBehaviour
 {
     public GameObject rootWavePrefab;
     public float attackRate = .5f;
+    public float rootsModifier = 1f;
     public LayerMask enemyMask;
 
     float timer;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +24,16 @@ public class RootWaveLauncher : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if(timer <= 0f)
+        if (timer <= 0f)
         {
             Vector3 target = ClosestEnemy();
-            if(target == Vector3.forward)
+            if (target == Vector3.forward)
             {
                 Debug.Log("no enemies");
                 return;
             }
             GameObject gm = Instantiate(rootWavePrefab, transform.position, Quaternion.identity);
-            gm.GetComponent<RootWave>().SetTarget(target);
+            gm.GetComponent<RootWave>().SetTarget(target, rootsModifier);
             timer = 1f / attackRate;
         }
     }
@@ -38,18 +41,18 @@ public class RootWaveLauncher : MonoBehaviour
     {
         RaycastHit2D[] enemiesInRange = Physics2D.CircleCastAll(transform.position, 100f, Vector3.forward, 100f, enemyMask);
 
-        if(enemiesInRange.Length == 0)
+        if (enemiesInRange.Length == 0)
         {
             return Vector3.forward;
         }
 
-        float dis = Vector3.Distance(transform.position,enemiesInRange[0].transform.position);
+        float dis = Vector3.Distance(transform.position, enemiesInRange[0].transform.position);
         int id = 0;
 
         for (int i = 1; i < enemiesInRange.Length; i++)
         {
             float temp = Vector3.Distance(transform.position, enemiesInRange[i].transform.position);
-            if(temp < dis)
+            if (temp < dis)
             {
                 dis = temp;
                 id = i;

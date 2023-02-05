@@ -12,8 +12,9 @@ public class Acorn : MonoBehaviour
     Vector3 target;
     bool targetSet = false;
 
-    public void SetTarget(Vector3 _target)
+    public void SetTarget(Vector3 _target, float dMod)
     {
+        damage = dMod;
         target = _target;
         targetSet = true;
     }

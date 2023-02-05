@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  lifetime: 1
+  lifetime: 3
   growthRate: 6
 --- !u!70 &2949492056625406381
 CapsuleCollider2D:

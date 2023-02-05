@@ -9,15 +9,25 @@ public class RootWave : MonoBehaviour
     public float damage = 1f;
     public float moveSpeed = 2f;
 
+    float life;
     Vector3 dir = Vector3.zero;
 
     private void Update()
     {
+        life -= Time.deltaTime;
+        if(life <= 0)
+        {
+            Destroy(gameObject);
+        }
         transform.position = Vector2.MoveTowards(transform.position, transform.position + dir * moveSpeed, moveSpeed * Time.deltaTime);
     }
 
-    public void SetTarget(Vector3 target)
+    public void SetTarget(Vector3 target, float mod)
     {
+        life = lifetime;
+        rootTime *= mod;
+        damage *= mod;
+        moveSpeed *= mod;
         dir = (target - transform.position).normalized;
         float angle = Vector2.SignedAngle(Vector2.right, dir) - 90f;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);

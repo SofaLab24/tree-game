@@ -49,4 +49,8 @@ public class Sap : MonoBehaviour
         Debug.Log("Applied sap");
         enemy.sapped(sapDuration);
     }
+    public void Upgrade(float _damage)
+    {
+        damage += _damage;
+    }
 }

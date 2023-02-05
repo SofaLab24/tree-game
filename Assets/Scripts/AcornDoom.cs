@@ -6,6 +6,7 @@ public class AcornDoom : MonoBehaviour
 {
     public GameObject acorn;
     public float cooldown = 5f;
+    public float damageModifier = 1f;
 
     float timer;
 
@@ -28,7 +29,7 @@ public class AcornDoom : MonoBehaviour
         Vector3 pos = PickPosition();
 
         GameObject gm = Instantiate(acorn, transform.position, Quaternion.identity);
-        gm.GetComponent<Acorn>().SetTarget(pos);
+        gm.GetComponent<Acorn>().SetTarget(pos, damageModifier);
     }
     Vector3 PickPosition()
     {
