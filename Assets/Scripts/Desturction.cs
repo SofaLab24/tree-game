@@ -11,7 +11,7 @@ public class Desturction : MonoBehaviour
         lifetime -= Time.deltaTime;
         if (lifetime <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
 
