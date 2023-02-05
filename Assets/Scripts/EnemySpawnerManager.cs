@@ -15,6 +15,7 @@ public class EnemySpawnerManager : MonoBehaviour
 
     float countdown = 1f;
     int selectedWaveInfo = 0;
+    int enemyToPick = 0;
 
     private void Awake()
     {
@@ -37,7 +38,12 @@ public class EnemySpawnerManager : MonoBehaviour
         countdown -= Time.deltaTime;
         if (countdown <= 0f)
         {
-            GameObject gm = Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[0], PickPosition(), Quaternion.identity);
+            GameObject gm = Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[enemyToPick], PickPosition(), Quaternion.identity);
+            enemyToPick++;
+            if (enemyToPick >= wavesPreset.waves[selectedWaveInfo].Enemies.Count)
+            {
+                enemyToPick = 0;
+            }
             gm.GetComponent<EnemyController>().health *= wavesPreset.waves[selectedWaveInfo].enemyHealthMulplier;
             countdown = 1f / wavesPreset.waves[selectedWaveInfo].waveSpawnRate;
         }
