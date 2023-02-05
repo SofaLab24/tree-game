@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDrops:
   - {fileID: 6829220960665657202, guid: b778bab402fa24af387997fd7eb63789, type: 3}
+  - {fileID: 8710583446989501608, guid: 6b5ab663ba9f0a84a9c35cea084f2612, type: 3}
+  - {fileID: 653598496597304711, guid: 4abf5d887e62da742aced9c903d95bb2, type: 3}
+  - {fileID: 6389240028272042698, guid: 469aba331bfe6a34681acae119bd8dd0, type: 3}

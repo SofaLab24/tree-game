@@ -18,6 +18,11 @@ public class EnemyController : MonoBehaviour
 
     public LootDropTable lootDrop;
 
+    public Color damaged;
+    public float colorDelay = .2f;
+    Color defColor;
+    SpriteRenderer rnd;
+
     public AudioClip deathSound;
     
     [SerializeField]
@@ -25,6 +30,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        rnd = GetComponent<SpriteRenderer>();
+        defColor = rnd.color;
         player = GameObject.FindGameObjectWithTag("Player");
         playerT = player.transform;
         enemyR = GetComponent<Rigidbody2D>();
@@ -60,9 +67,16 @@ public class EnemyController : MonoBehaviour
             dropItem();
             SoundManager.Instance.Play(deathSound);
             Destroy(this.gameObject);
+            return;
         }
+        StartCoroutine(ChangeColor());
     }
-
+    IEnumerator ChangeColor()
+    {
+        rnd.color = damaged;
+        yield return new WaitForSeconds(colorDelay);
+        rnd.color = defColor;
+    }
     private void dropItem()
     {
         float chance = Random.Range(0, 100);
