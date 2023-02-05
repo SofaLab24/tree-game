@@ -21,7 +21,7 @@ public class Desturction : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<CharacterController>().takeDamage(damage);
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
