@@ -100,7 +100,8 @@ public class CharacterController : MonoBehaviour
                 SoundManager.Instance.Play(deathSound);
                 dead = true;
                 GameManager.instance.NextScene();
-                Destroy(character);
+                character.GetComponent<SpriteRenderer>().enabled = false;
+                this.enabled = false;
             }
         }
     }
