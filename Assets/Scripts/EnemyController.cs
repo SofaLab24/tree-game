@@ -18,15 +18,17 @@ public class EnemyController : MonoBehaviour
 
     public LootDropTable lootDrop;
 
-    public Color damaged;
+    public Color damaged = Color.red;
     public float colorDelay = .2f;
     Color defColor;
     SpriteRenderer rnd;
 
     public AudioClip deathSound;
-    
+
     [SerializeField]
     protected float enemySpeed = 2f;
+
+    float speedMod = 1f;
 
     void Start()
     {
@@ -48,13 +50,13 @@ public class EnemyController : MonoBehaviour
         if (transform.position.x > playerT.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
-            transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime * speedMod);
             enemySR.flipX = false;
         }
         else if (transform.position.x < playerT.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
-            transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerT.position, enemySpeed * Time.deltaTime * speedMod);
             enemySR.flipX = true;
         }
     }
@@ -81,7 +83,7 @@ public class EnemyController : MonoBehaviour
     {
         float chance = Random.Range(0, 100);
         if (chance / 100 < dropChance)
-        {            
+        {
             Instantiate(lootDrop.PickItem(), transform.position, transform.rotation);
         }
     }
@@ -98,7 +100,9 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator RootTime(float duration)
     {
+        speedMod = 0f;
         yield return new WaitForSeconds(duration);
+        speedMod = 1f;
     }
 
     //public void OnTriggerEnter2D(Collider2D other)
