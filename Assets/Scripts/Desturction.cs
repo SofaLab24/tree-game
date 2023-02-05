@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Desturction : MonoBehaviour
 {
+    public float damage = 1f;
     public float lifetime;
 
     void Update()
@@ -19,6 +20,7 @@ public class Desturction : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            collision.GetComponent<CharacterController>().takeDamage(damage);
             Destroy(this);
         }
     }
