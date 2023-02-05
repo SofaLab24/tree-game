@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93471762431f43799b54c492ccdff90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 3
+  damageAmount: 2
   slapSound: {fileID: 8300000, guid: 145d7621dd9c44fc98b3a80e50a855b7, type: 3}
 --- !u!212 &-4577338408801093549
 SpriteRenderer:
