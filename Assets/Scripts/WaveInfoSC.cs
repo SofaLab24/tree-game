@@ -7,4 +7,5 @@ public class WaveInfoSC : ScriptableObject
 {
     public List<GameObject> Enemies;
     public float waveSpawnRate = 1f;
+    public float enemyHealthMulplier = 1f;
 }

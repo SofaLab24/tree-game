@@ -37,7 +37,8 @@ public class EnemySpawnerManager : MonoBehaviour
         countdown -= Time.deltaTime;
         if (countdown <= 0f)
         {
-            Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[0], PickPosition(), Quaternion.identity);
+            GameObject gm = Instantiate(wavesPreset.waves[selectedWaveInfo].Enemies[0], PickPosition(), Quaternion.identity);
+            gm.GetComponent<EnemyController>().health *= wavesPreset.waves[selectedWaveInfo].enemyHealthMulplier;
             countdown = 1f / wavesPreset.waves[selectedWaveInfo].waveSpawnRate;
         }
     }
@@ -78,5 +79,11 @@ public class EnemySpawnerManager : MonoBehaviour
         {
             Gizmos.DrawWireCube(playerObject.transform.position, Vector3.one * radiusFromPlayer);
         }
+    }
+
+    public void IncrementWave()
+    {
+        if(selectedWaveInfo + 1 < wavesPreset.waves.Count)
+            selectedWaveInfo++;
     }
 }

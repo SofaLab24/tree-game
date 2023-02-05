@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7f8d6f631671754ba387dfb44108f0a, type: 3}
-  m_Name: New Wave info
+  m_Name: Wave 5
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 5602018320546986826, guid: d2063b52adf5e40e198290204ced5234, type: 3}
-  waveSpawnRate: 3
+  - {fileID: 2516267442113120853, guid: 8e069e0d5f6b94393b7128c5a8abae96, type: 3}
+  waveSpawnRate: 1
+  enemyHealthMulplier: 3
