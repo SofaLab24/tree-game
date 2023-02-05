@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7802946553839315872}
   - component: {fileID: 8626959935670458850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GPX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5210142500454720973}
   - component: {fileID: 1586180275318690503}
   - component: {fileID: 6217506498358151974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RootsDrop
   m_TagString: Pickup
   m_Icon: {fileID: 0}

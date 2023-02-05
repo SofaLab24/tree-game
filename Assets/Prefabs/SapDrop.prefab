@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1870976631815873152}
   - component: {fileID: 5168462372682061194}
   - component: {fileID: 6066068532872733402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SapDrop
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4463222425546829037}
   - component: {fileID: 2738243480363982511}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GPX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2986398553875098016, guid: b778bab402fa24af387997fd7eb63789, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5630417953783060597, guid: b778bab402fa24af387997fd7eb63789, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6829220960665657202, guid: b778bab402fa24af387997fd7eb63789, type: 3}
       propertyPath: m_Name
-      value: Drop
+      value: DropSeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829220960665657202, guid: b778bab402fa24af387997fd7eb63789, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b778bab402fa24af387997fd7eb63789, type: 3}

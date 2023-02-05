@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5476575085468532162}
   - component: {fileID: 6336574366041657216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GPX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7496015584034599855}
   - component: {fileID: 3911983227626210469}
   - component: {fileID: 8540488643743024631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AcornDrop
   m_TagString: Pickup
   m_Icon: {fileID: 0}

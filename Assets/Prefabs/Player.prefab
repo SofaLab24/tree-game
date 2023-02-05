@@ -5372,6 +5372,10 @@ PrefabInstance:
       value: Sap
       objectReference: {fileID: 0}
     - target: {fileID: 7127386815380750802, guid: 6f0f1d02be084e74cb30b65483a700af, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127386815380750802, guid: 6f0f1d02be084e74cb30b65483a700af, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
