@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   damage: 1
-  dropChance: 0.3
+  dropChance: 0.06
   lootDrop: {fileID: 11400000, guid: 43e953963fe7bb64c9972895068ba0e8, type: 2}
   damaged: {r: 1, g: 0, b: 0, a: 1}
   colorDelay: 0.2

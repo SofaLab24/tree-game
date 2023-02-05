@@ -4906,6 +4906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acorn: {fileID: 1793178341559798213, guid: 3ac5b32b21308214e8974b8b3fad3f5d, type: 3}
   cooldown: 1.5
+  damageModifier: 1
 --- !u!1 &292071537916192034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4952,6 +4953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rootWavePrefab: {fileID: 5873546758990820891, guid: 09c4364fd3b1cf64db3f2e0d0fee6899, type: 3}
   attackRate: 0.5
+  rootsModifier: 1
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
@@ -5162,14 +5164,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68eae8eeefe964af08f85b9959d52476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 8566304453068902432}
   runSpeed: 20
   health: 100
   maxHealth: 5
   xBounds: 75
   yBounds: 85
-  hitSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: a318c0f4d3d044ff098e4a703f67777b, type: 3}
+  deathSound: {fileID: 8300000, guid: 7d0e457a3ea0e4f59a66b4377723994a, type: 3}
   runParticles: {fileID: 1028265800}
   slider: {fileID: 0}
 --- !u!114 &1859831022
