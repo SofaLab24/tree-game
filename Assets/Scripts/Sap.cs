@@ -46,7 +46,6 @@ public class Sap : MonoBehaviour
     {
         timer = timeToAttack;
         enemy.takeDamage(damage);
-        Debug.Log("Applied sap");
         enemy.sapped(sapDuration);
     }
     public void Upgrade(float _damage)

@@ -5165,11 +5165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 8566304453068902432}
-  runSpeed: 20
-  health: 100
+  runSpeed: 15
+  health: 20
   maxHealth: 5
-  xBounds: 75
-  yBounds: 85
+  xBounds: 65
+  yBounds: 75
   hitSound: {fileID: 8300000, guid: a318c0f4d3d044ff098e4a703f67777b, type: 3}
   deathSound: {fileID: 8300000, guid: 7d0e457a3ea0e4f59a66b4377723994a, type: 3}
   runParticles: {fileID: 1028265800}
@@ -5201,9 +5201,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8566304453298103940}
   - component: {fileID: 8566304453298103941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slash
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
